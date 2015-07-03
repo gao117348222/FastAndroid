@@ -12,12 +12,18 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.gx303.fastandroid.db.FastDatabaseHelper;
+import com.gx303.fastandroid.db.FastDbHelper;
 import com.gx303.fastandroid.http.FastHttp;
 import com.gx303.fastandroid.http.FastHttpCallback;
 import com.gx303.framedemo.listviewdemo.LvActivity;
+import com.gx303.framedemo.orm.User;
+import com.gx303.framedemo.orm.dbhelp1;
 import com.gx303.framedemo.pulllistview.LoadMoreActivity;
 
 import org.json.JSONObject;
+
+import java.util.List;
 
 
 public class MainActivity extends com.gx303.fastandroid.BaseActivity {
@@ -94,6 +100,25 @@ public class MainActivity extends com.gx303.fastandroid.BaseActivity {
                 e("error"+error.toString());
             }
         });
+
+
+
+//        DaoMaster
+//        helper = new DaoMaster.DevOpenHelper(this, "notes-db", null);
+//        db = helper.getWritableDatabase();
+//        daoMaster = new DaoMaster(db);
+//        daoSession = daoMaster.newSession();
+//        noteDao = daoSession.getNoteDao();
+//        new DaoGenerator()
+//        UserDao ud1=new UserDao(getApplicationContext());
+//        ud1.add(new User("hehe"));
+//        FastDbHelper fh=new FastDbHelper(new dbhelp1(getApplicationContext()));
+//        fh.create(new User("呵呵呵123123"));
+//        List<User> l1=fh.queryForAll(User.class);
+//        for(int i=0;i<l1.size();i++)
+//        {
+//            e("user:"+l1.get(i).getName());
+//        }
     }
 
     @Override
@@ -116,6 +141,26 @@ public class MainActivity extends com.gx303.fastandroid.BaseActivity {
 
     }
 
+    public void insertsql(View v)
+    {
+        FastDbHelper fh=new FastDbHelper(new dbhelp1(getApplicationContext()));
+        fh.create(new User("呵呵呵123123"));
+
+    }
+    public void selectSql(View v)
+    {
+        FastDbHelper fh=new FastDbHelper(new dbhelp1(getApplicationContext()));
+        List<User> l1=fh.queryForAll(User.class);
+        for(int i=0;i<l1.size();i++)
+        {
+            e("user:"+l1.get(i).getName());
+        }
+
+    }
+    public void updatesql(View v)
+    {
+
+    }
     public void openlistview(View v)
     {
         Intent it_lv=new Intent();

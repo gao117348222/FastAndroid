@@ -42,6 +42,27 @@
                 android:text="Fragment"
                 android:id="@+id/button5"
                 android:onClick="openfragment" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="insert sql"
+                android:id="@+id/button10"
+                android:onClick="insertsql" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SELECT SQL"
+                android:id="@+id/button11"
+                android:onClick="selectSql" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UPDATE SQL"
+                android:id="@+id/button12"
+                android:onClick="updatesql" />
         </LinearLayout>
     </ScrollView>
 
