@@ -21,6 +21,6 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:support-v4:22.1.1'
-    compile 'com.mcxiaoke.volley:library:1.0.16'
     compile 'com.j256.ormlite:ormlite-android:4.48'
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
 }

@@ -25,6 +25,20 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="网络访问_get"
+                android:id="@+id/button14"
+                android:onClick="webtest" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="网络访问_post"
+                android:id="@+id/button15"
+                android:onClick="testpost" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="下拉刷新ListView"
                 android:id="@+id/button3"
                 android:onClick="openpulllistview" />
@@ -32,7 +46,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="自动更多"
+                android:text="下拉刷新和自动更多"
                 android:id="@+id/button4"
                 android:onClick="openloadmore" />
 
@@ -63,6 +77,13 @@
                 android:text="UPDATE SQL"
                 android:id="@+id/button12"
                 android:onClick="updatesql" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="获取系统相册-测试"
+                android:id="@+id/button13"
+                android:onClick="getxc" />
         </LinearLayout>
     </ScrollView>
 

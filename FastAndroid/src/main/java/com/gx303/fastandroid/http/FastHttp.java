@@ -2,50 +2,66 @@ package com.gx303.fastandroid.http;
 
 import android.util.Log;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
+
 import com.gx303.fastandroid.utils.LogUtils;
+import com.squareup.okhttp.Callback;
+import com.squareup.okhttp.FormEncodingBuilder;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
 
 import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2015/7/2.
  */
 public class FastHttp {
-    public static void getJson(String url,String requestBody,FastHttpCallback callback)
+    static OkHttpClient client = new OkHttpClient();
+    public static void GET(String url,final FastHttpCallback callback)
     {
-        useValleyJson(Request.Method.GET,url,requestBody,callback);
-
-    }
-    public static void postJson(String url,String requestBody,FastHttpCallback callback)
-    {
-        useValleyJson(Request.Method.GET,url,requestBody,callback);
-    }
-    private static void useValleyJson(int method,String url,String requestBody, final FastHttpCallback callback)
-    {
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(method, url, new Response.Listener<JSONObject>() {
+        Request request = new Request.Builder().url(url).build();
+        client.newCall(request).enqueue(new Callback() {
             @Override
-            public void onResponse(JSONObject response) {
-                callback.onEnd();
-                callback.onResponse(response);
+            public void onFailure(Request request, IOException e) {
+                callback.onFailure(e.toString());
             }
-        }, new Response.ErrorListener() {
+
             @Override
-            public void onErrorResponse(VolleyError error) {
-                callback.onEnd();
-                callback.onErrorResponse(error);
+            public void onResponse(Response response) throws IOException {
+                callback.onResponse(response.body().string());
             }
         });
-        if(RequestQueueManager.getInstance().getRequsetQueue()!=null)
-        {
-            callback.onStart();
-            RequestQueueManager.getInstance().getRequsetQueue().add(jsonObjectRequest);
-        }
-        else
-        {
-            LogUtils.error("RequestQueueManager为空，请设置一个application并继承BaseFragmentActivity");
-        }
     }
+    public static void POST(String url,Map<String, String> params,final FastHttpCallback callback)
+    {
+        FormEncodingBuilder FEB1=new FormEncodingBuilder();
+        if (params != null) {
+            for (Map.Entry<String, String> e : params.entrySet()) {
+                FEB1.add(e.getKey(),e.getValue());
+            }
+        }
+        RequestBody formBody=FEB1.build();
+        Request request = new Request.Builder()
+                .url(url)
+                .post(formBody)
+                .build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Request request, IOException e) {
+                callback.onFailure(e.toString());
+            }
+
+            @Override
+            public void onResponse(Response response) throws IOException {
+                callback.onResponse(response.body().string());
+            }
+        });
+
+    }
+
+
 }

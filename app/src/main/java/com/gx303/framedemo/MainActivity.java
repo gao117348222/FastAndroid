@@ -2,16 +2,15 @@ package com.gx303.framedemo;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.ArrayMap;
 import android.util.Log;
 import android.view.View;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+
 import com.gx303.fastandroid.db.FastDatabaseHelper;
 import com.gx303.fastandroid.db.FastDbHelper;
 import com.gx303.fastandroid.http.FastHttp;
@@ -23,7 +22,9 @@ import com.gx303.framedemo.pulllistview.LoadMoreActivity;
 
 import org.json.JSONObject;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class MainActivity extends com.gx303.fastandroid.BaseActivity {
@@ -34,91 +35,7 @@ public class MainActivity extends com.gx303.fastandroid.BaseActivity {
 
         e("aaaaaaaaaaaaaaaaaaaaa");
 
-
-
-//        StringRequest stringRequest = new StringRequest("http://www.baidu.com",
-//                new Response.Listener<String>() {
-//                    @Override
-//                    public void onResponse(String response) {
-//                       e( response);
-//                    }
-//                }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//             e(error.getMessage());
-//            }
-//        });
-//        RequestQueue mQueue = Volley.newRequestQueue(getApplicationContext());
-//        mQueue.add(stringRequest);
-//        stringRequest.
-
-
-//        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest("http://m.weather.com.cn/data/101010100.html", null,
-//                new Response.Listener<JSONObject>() {
-//                    @Override
-//                    public void onResponse(JSONObject response) {
-//                       e(response.toString());
-//                    }
-//                }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//               e("error"+error.getMessage());
-//            }
-//        });
-//        mQueue.add(jsonObjectRequest);
-
-//        FastHttp.getJson("http://www.weather.com.cn/data/sk/101010100.html", null, new Response.Listener<JSONObject>() {
-//            @Override
-//            public void onResponse(JSONObject response) {
-//                t(response.toString());
-//            }
-//        }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                e("error"+error.toString());
-//            }
-//        });
-
-        FastHttp.getJson("http://www.weather.com.cn/data/sk/101010100.html", null, new FastHttpCallback() {
-            @Override
-            public void onStart() {
-                e("开始");
-            }
-
-            @Override
-            public void onEnd() {
-                e("结束");
-            }
-
-            @Override
-            public void onResponse(JSONObject response) {
-                e(response.toString());
-            }
-
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                e("error"+error.toString());
-            }
-        });
-
-
-
-//        DaoMaster
-//        helper = new DaoMaster.DevOpenHelper(this, "notes-db", null);
-//        db = helper.getWritableDatabase();
-//        daoMaster = new DaoMaster(db);
-//        daoSession = daoMaster.newSession();
-//        noteDao = daoSession.getNoteDao();
-//        new DaoGenerator()
-//        UserDao ud1=new UserDao(getApplicationContext());
-//        ud1.add(new User("hehe"));
-//        FastDbHelper fh=new FastDbHelper(new dbhelp1(getApplicationContext()));
-//        fh.create(new User("呵呵呵123123"));
-//        List<User> l1=fh.queryForAll(User.class);
-//        for(int i=0;i<l1.size();i++)
-//        {
-//            e("user:"+l1.get(i).getName());
-//        }
+        com.gx303.fastandroid.utils.PreferencesUtils.putString(getApplication(),"ceshi","测试");
     }
 
     @Override
@@ -159,6 +76,7 @@ public class MainActivity extends com.gx303.fastandroid.BaseActivity {
     }
     public void updatesql(View v)
     {
+        FastDbHelper fh=new FastDbHelper(new dbhelp1(getApplicationContext()));
 
     }
     public void openlistview(View v)
@@ -167,6 +85,11 @@ public class MainActivity extends com.gx303.fastandroid.BaseActivity {
         it_lv.setClass(getApplicationContext(), LvActivity.class);
         startActivity(it_lv);
     }
+
+    /**
+     * @param v 下拉刷新
+     *          用到第三方 in.srain.cube:ultra-ptr
+     */
     public void openpulllistview(View v)
     {
         Intent it_pull=new Intent();
@@ -174,6 +97,10 @@ public class MainActivity extends com.gx303.fastandroid.BaseActivity {
 //        it_pull.setClass(getApplicationContext(), LvActivity.class);
         startActivity(it_pull);
     }
+
+    /**
+     * @param v 下拉刷新和自动更多
+     */
     public void openloadmore(View v)
     {
         Intent it_loadmore=new Intent();
@@ -183,8 +110,86 @@ public class MainActivity extends com.gx303.fastandroid.BaseActivity {
     public void openfragment(View v)
     {
         Intent it_fra=new Intent();
-        it_fra.setClass(getApplicationContext(),testFragmentActivity.class);
+        it_fra.setClass(getApplicationContext(), testFragmentActivity.class);
         startActivity(it_fra);
     }
 
+    /**
+     * @param v 获取相册图片
+     */
+    public void getxc(View v)
+    {
+//        Uri u1=Uri.parse("/mnt/sdcard/screenshot.png");
+//        e("aaaaa"+u1.toString());
+
+
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("image/*");
+        startActivityForResult(intent, 1111);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==1111&&resultCode==RESULT_OK)
+        {
+            Uri fileUri = data.getData();
+            e("aaaaa"+fileUri.toString());
+            e("aaaaa"+ fileUri.getPath());
+            e("aaaaa"+changeUriToPath(fileUri));
+        }
+    }
+    // 将URI转换为真实路径
+    private String changeUriToPath(Uri uri) {
+        String[] proj = { MediaStore.Images.Media.DATA };
+        Cursor actualImageCursor = managedQuery(uri, proj, null, null, null);
+        int actual_image_column_index = actualImageCursor
+                .getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+        actualImageCursor.moveToFirst();
+        String currentImagePath = actualImageCursor
+                .getString(actual_image_column_index);
+        return currentImagePath;
+    }
+
+    /**
+     * @param v 访问网络测试 get
+     */
+    public void webtest(View v)
+    {
+        e("访问网络开始");
+        com.gx303.fastandroid.http.FastHttp.GET("http://www.weather.com.cn/adat/sk/101110101.html", new FastHttpCallback() {
+            @Override
+            public void onResponse(String result) {
+                e("访问网络测试结果"+result);
+            }
+
+            @Override
+            public void onFailure(String error) {
+
+            }
+        });
+    }
+    public void testpost(View v)
+    {
+        e("测试POST开始");
+        Map<String,String > map1=new HashMap<String,String>();
+        map1.put("key1","value1");
+        map1.put("key2","value2");
+        map1.put("key3","value3");
+        map1.put("key4","value4");
+        map1.put("key4","测试中文");
+
+
+        com.gx303.fastandroid.http.FastHttp.POST("http://weixingtest1.sinaapp.com/testpost.php", map1, new FastHttpCallback() {
+            @Override
+            public void onResponse(String result) {
+                e("测试POST结束"+result);
+            }
+
+            @Override
+            public void onFailure(String error) {
+
+            }
+        });
+    }
 }

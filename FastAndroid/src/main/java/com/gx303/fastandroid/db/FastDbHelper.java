@@ -86,6 +86,7 @@ public class FastDbHelper<T> {
         {
             Dao dao = db.getDao(c);
             return dao.queryForEq(fieldName, value);
+
         }
         catch (SQLException e)
         {
