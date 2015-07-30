@@ -15,6 +15,7 @@ import com.gx303.fastandroid.db.FastDatabaseHelper;
 import com.gx303.fastandroid.db.FastDbHelper;
 import com.gx303.fastandroid.http.FastHttp;
 import com.gx303.fastandroid.http.FastHttpCallback;
+import com.gx303.framedemo.image.ImageActivity;
 import com.gx303.framedemo.listviewdemo.LvActivity;
 import com.gx303.framedemo.orm.User;
 import com.gx303.framedemo.orm.dbhelp1;
@@ -177,13 +178,13 @@ public class MainActivity extends com.gx303.fastandroid.BaseActivity {
         map1.put("key2","value2");
         map1.put("key3","value3");
         map1.put("key4","value4");
-        map1.put("key4","测试中文");
+        map1.put("key4", "测试中文");
 
 
         com.gx303.fastandroid.http.FastHttp.POST("http://weixingtest1.sinaapp.com/testpost.php", map1, new FastHttpCallback() {
             @Override
             public void onResponse(String result) {
-                e("测试POST结束"+result);
+                e("测试POST结束" + result);
             }
 
             @Override
@@ -191,5 +192,11 @@ public class MainActivity extends com.gx303.fastandroid.BaseActivity {
 
             }
         });
+    }
+    public void testglide(View v)
+    {
+        Intent itimage=new Intent();
+        itimage.setClass(getApplicationContext(), ImageActivity.class);
+        startActivity(itimage);
     }
 }

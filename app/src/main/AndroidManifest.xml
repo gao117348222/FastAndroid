@@ -21,6 +21,7 @@
         <activity android:name="com.gx303.framedemo.pulllistview.PullRefreshActivity"></activity>
         <activity android:name=".pulllistview.LoadMoreActivity"></activity>
         <activity android:name=".testFragmentActivity"></activity>
+        <activity android:name=".image.ImageActivity"></activity>
     </application>
 
 </manifest>

@@ -20,7 +20,7 @@ import java.util.Map;
  * Created by Administrator on 2015/7/2.
  */
 public class FastHttp {
-    static OkHttpClient client = new OkHttpClient();
+    public static OkHttpClient client = new OkHttpClient();
     public static void GET(String url,final FastHttpCallback callback)
     {
         Request request = new Request.Builder().url(url).build();
