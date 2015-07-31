@@ -11,7 +11,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import com.litesuits.android.log.Log;
 
 import java.util.ArrayList;
 
@@ -28,7 +27,7 @@ public class NotificationUtil {
     }
 
     public static void notification(Context context, int icon, String ticker, String title, String msg, Uri uri, String activityClassName) {
-        Log.i(TAG, "notiry uri :" + uri);
+//        Log.i(TAG, "notiry uri :" + uri);
         // 设置通知的事件消息
         Intent intent = new Intent();
         if (uri != null) {

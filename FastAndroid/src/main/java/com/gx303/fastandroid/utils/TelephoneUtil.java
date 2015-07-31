@@ -2,7 +2,6 @@ package com.gx303.fastandroid.utils;
 
 import android.content.Context;
 import android.telephony.TelephonyManager;
-import com.litesuits.android.log.Log;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -37,7 +36,7 @@ public class TelephoneUtil {
     public static String getIMSI(Context context) {
         TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         String IMSI = telephonyManager.getSubscriberId();
-        Log.i(TAG, " IMSI：" + IMSI);
+//        Log.i(TAG, " IMSI：" + IMSI);
         return IMSI;
     }
 
@@ -53,7 +52,7 @@ public class TelephoneUtil {
     public static String getIMEI(Context context) {
         TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         String IMEI = telephonyManager.getDeviceId();
-        Log.i(TAG, " IMEI：" + IMEI);
+//        Log.i(TAG, " IMEI：" + IMEI);
         return IMEI;
     }
 
@@ -96,7 +95,7 @@ public class TelephoneUtil {
         sb.append("\nSubscriberId         :").append(tm.getSubscriberId());
         sb.append("\nVoiceMailNumber      :").append(tm.getVoiceMailNumber());
 
-        Log.i(TAG, sb.toString());
+//        Log.i(TAG, sb.toString());
         return sb.toString();
     }
 
@@ -167,7 +166,7 @@ public class TelephoneUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Log.i(TAG, "MTK: " + teleInfo);
+//        Log.i(TAG, "MTK: " + teleInfo);
         return teleInfo;
     }
 
@@ -209,7 +208,7 @@ public class TelephoneUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Log.i(TAG, "MTK2: " + teleInfo);
+//        Log.i(TAG, "MTK2: " + teleInfo);
         return teleInfo;
     }
 
@@ -246,7 +245,7 @@ public class TelephoneUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Log.i(TAG, "Qualcomm: " + teleInfo);
+//        Log.i(TAG, "Qualcomm: " + teleInfo);
         return teleInfo;
     }
 
@@ -283,7 +282,7 @@ public class TelephoneUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Log.i(TAG, "Spreadtrum: " + teleInfo);
+//        Log.i(TAG, "Spreadtrum: " + teleInfo);
         return teleInfo;
     }
 }

@@ -1,7 +1,6 @@
 package com.gx303.fastandroid.utils;
 
-import com.litesuits.android.log.Log;
-import com.litesuits.common.assist.Check;
+
 
 import java.io.*;
 import java.util.regex.Pattern;
@@ -31,9 +30,8 @@ public class CpuUtil {
      */
     public static String printCpuInfo() {
         String info = FileUtil.getFileOutputString(CPU_INFO_PATH);
-        if (Log.isPrint) {
-            Log.i(TAG, "_______  CPU :   \n" + info);
-        }
+
+
         return info;
     }
 
@@ -89,7 +87,7 @@ public class CpuUtil {
      * Get CPU name.
      */
     public static String getCpuName() {
-        if (!Check.isEmpty(CPU_NAME)) {
+        if (CPU_NAME!=null&&!CPU_NAME.equals("")) {
             return CPU_NAME;
         }
         try {
@@ -98,9 +96,6 @@ public class CpuUtil {
             bufferedReader.close();
             String[] array = line.split(":\\s+", 2);
             if (array.length > 1) {
-                if (Log.isPrint) {
-                    Log.i(TAG, array[1]);
-                }
                 CPU_NAME = array[1];
             }
         } catch (IOException e) {
@@ -167,9 +162,6 @@ public class CpuUtil {
             }
             in.close();
             process.destroy();
-            if (Log.isPrint) {
-                Log.i(TAG, "CMD: " + sb.toString());
-            }
             return sb.toString();
         } catch (IOException ex) {
             ex.printStackTrace();
