@@ -16,7 +16,7 @@ public abstract class FastAdapter<T> extends BaseAdapter {
     private LayoutInflater mInflater;
     private Context mContext;
     private int listViewItemLayout;
-    public FastAdapter(Context context,List<T> mDatas,int listViewItemLayout)
+    public FastAdapter(Context context, List<T> mDatas, int listViewItemLayout)
     {
         mInflater = LayoutInflater.from(context);
         this.mContext = context;

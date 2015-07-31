@@ -1,11 +1,7 @@
 package com.gx303.framedemo.image;
 
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.gx303.fastandroid.adapter.FastAdapter;

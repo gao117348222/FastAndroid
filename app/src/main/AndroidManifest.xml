@@ -22,6 +22,7 @@
         <activity android:name=".pulllistview.LoadMoreActivity"></activity>
         <activity android:name=".testFragmentActivity"></activity>
         <activity android:name=".image.ImageActivity"></activity>
+        <activity android:name=".dialog.DialogDemo"></activity>
     </application>
 
 </manifest>

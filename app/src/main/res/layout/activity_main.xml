@@ -92,6 +92,13 @@
                 android:text="测试图片glide"
                 android:id="@+id/button16"
                 android:onClick="testglide" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="测试DIALOG"
+                android:id="@+id/button18"
+                android:onClick="createdialog" />
         </LinearLayout>
     </ScrollView>
 

@@ -15,6 +15,7 @@ import com.gx303.fastandroid.db.FastDatabaseHelper;
 import com.gx303.fastandroid.db.FastDbHelper;
 import com.gx303.fastandroid.http.FastHttp;
 import com.gx303.fastandroid.http.FastHttpCallback;
+import com.gx303.framedemo.dialog.DialogDemo;
 import com.gx303.framedemo.image.ImageActivity;
 import com.gx303.framedemo.listviewdemo.LvActivity;
 import com.gx303.framedemo.orm.User;
@@ -198,5 +199,11 @@ public class MainActivity extends com.gx303.fastandroid.BaseActivity {
         Intent itimage=new Intent();
         itimage.setClass(getApplicationContext(), ImageActivity.class);
         startActivity(itimage);
+    }
+    public void createdialog(View v)
+    {
+        Intent it1=new Intent();
+        it1.setClass(getApplicationContext(), DialogDemo.class);
+        startActivity(it1);
     }
 }
