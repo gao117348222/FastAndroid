@@ -28,21 +28,21 @@ public abstract class BaseActivity extends Activity {
     public abstract void getData();
     public abstract void showContent();
 
-    public void e(String msg){
-        LogUtils.e(getClassName(),msg);
-    }
-    public void w(String msg){
-        LogUtils.w(getClassName(), msg);
-    }
-    public void i(String msg){
-        LogUtils.i(getClassName(), msg);
-    }
-    public void d(String msg){
-        LogUtils.d(getClassName(), msg);
-    }
-    public void v(String msg){
-        LogUtils.v(getClassName(), msg);
-    }
+//    public void e(String msg){
+//        LogUtils.e(msg);
+//    }
+//    public void w(String msg){
+//        LogUtils.w( msg);
+//    }
+//    public void i(String msg){
+//        LogUtils.i( msg);
+//    }
+//    public void d(String msg){
+//        LogUtils.d( msg);
+//    }
+//    public void v(String msg){
+//        LogUtils.v( msg);
+//    }
     private String getClassName()
     {
         return getClass().getSimpleName();

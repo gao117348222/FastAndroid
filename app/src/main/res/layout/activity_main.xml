@@ -99,6 +99,13 @@
                 android:text="测试DIALOG"
                 android:id="@+id/button18"
                 android:onClick="createdialog" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="测试recyclerview"
+                android:id="@+id/button19"
+                android:onClick="testrecyclerview" />
         </LinearLayout>
     </ScrollView>
 

@@ -23,6 +23,7 @@
         <activity android:name=".testFragmentActivity"></activity>
         <activity android:name=".image.ImageActivity"></activity>
         <activity android:name=".dialog.DialogDemo"></activity>
+        <activity android:name=".recyelcviewdemo.testRecycleView"></activity>
     </application>
 
 </manifest>

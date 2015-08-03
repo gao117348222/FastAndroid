@@ -19,56 +19,65 @@ public class LogUtils {
     {
         LOG_LEVEL=logLevel;
     }
-
+    public static void setTAG(String tag){
+        TAG=tag;
+    }
     static String className;
     static String methodName;
     static int lineNumber;
     private static String createLog( String log ) {
         StringBuffer buffer = new StringBuffer();
-        buffer.append("[");
         buffer.append(className);
+        buffer.append("[");
+        buffer.append(methodName+":"+lineNumber);
         buffer.append("]");
         buffer.append(log);
         return buffer.toString();
     }
     private static void getMethodNames(StackTraceElement[] sElements){
-        className = sElements[1].getFileName();
-        methodName = sElements[1].getMethodName();
-        lineNumber = sElements[1].getLineNumber();
+//        for(int i=0;i<sElements.length;i++)
+//        {
+//            Log.e("Unity",i+"className"+sElements[i].getClassName()+"FileName"+sElements[i].getFileName()+"MethodName"+sElements[i].getMethodName()+"linenumber"+sElements[i].getLineNumber());
+//        }
+        if(sElements.length>=1) {
+            className = sElements[1].getFileName();
+            methodName = sElements[1].getMethodName();
+            lineNumber = sElements[1].getLineNumber();
+        }
     }
-    public static void e(String tag,String msg){
+    public static void e(String msg){
         if(LOG_LEVEL>ERROR&&msg!=null)
         {
             getMethodNames(new Exception().getStackTrace());
-            Log.e(tag, createLog(msg));
+            Log.e(TAG, createLog(msg));
         }
     }
 
-    public static void w(String tag,String msg){
+    public static void w(String msg){
         if(LOG_LEVEL>WARN&&msg!=null) {
             getMethodNames(new Exception().getStackTrace());
-            Log.w(tag, createLog(msg));
+            Log.w(TAG, createLog(msg));
         }
     }
-    public static void i(String tag,String msg){
+    public static void i(String msg){
         if(LOG_LEVEL>INFO&&msg!=null) {
             getMethodNames(new Exception().getStackTrace());
-            Log.i(tag, createLog(msg));
+            Log.i(TAG, createLog(msg));
         }
     }
-    public static void d(String tag,String msg){
+    public static void d(String msg){
         if(LOG_LEVEL>DEBUG&&msg!=null) {
             getMethodNames(new Exception().getStackTrace());
-            Log.d(tag, createLog(msg));
+            Log.d(TAG, createLog(msg));
         }
     }
-    public static void v(String tag,String msg){
+    public static void v(String msg){
         if(LOG_LEVEL>VERBOS&&msg!=null) {
             getMethodNames(new Exception().getStackTrace());
-            Log.v(tag, createLog(msg));
+            Log.v(TAG, createLog(msg));
         }
     }
-    static String TAG="com.gx303.fastandroid";
+    private static String TAG="com.gx303.fastandroid";
     public static void error(String msg)
     {
         Log.e(TAG,msg);

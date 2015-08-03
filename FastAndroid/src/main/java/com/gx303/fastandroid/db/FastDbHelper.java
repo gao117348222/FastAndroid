@@ -31,7 +31,7 @@ public class FastDbHelper<T> {
         }
         catch (SQLException e)
         {
-            LogUtils.e("create",e.toString());
+            LogUtils.e("create"+e.toString());
         }
         finally
         {
@@ -51,7 +51,7 @@ public class FastDbHelper<T> {
         }
         catch (SQLException e)
         {
-            LogUtils.e("exists",e.toString());
+            LogUtils.e("exists"+e.toString());
         }
         finally
         {
@@ -71,7 +71,7 @@ public class FastDbHelper<T> {
         }
         catch (SQLException e)
         {
-            LogUtils.e("createIfNotExists",e.toString());
+            LogUtils.e("createIfNotExists"+e.toString());
         }
         finally
         {
@@ -90,7 +90,7 @@ public class FastDbHelper<T> {
         }
         catch (SQLException e)
         {
-            LogUtils.e("queryForEq",e.toString());
+            LogUtils.e("queryForEq"+e.toString());
         }
         finally
         {
@@ -108,7 +108,7 @@ public class FastDbHelper<T> {
         }
         catch (SQLException e)
         {
-            LogUtils.e("remove",e.toString());
+            LogUtils.e("remove"+e.toString());
         }
         finally
         {
@@ -140,7 +140,7 @@ public class FastDbHelper<T> {
         }
         catch (SQLException e)
         {
-            LogUtils.e("update",e.toString());
+            LogUtils.e("update"+e.toString());
         }
         finally
         {
@@ -158,7 +158,7 @@ public class FastDbHelper<T> {
         }
         catch (SQLException e)
         {
-            LogUtils.e("update",e.toString());
+            LogUtils.e("update"+e.toString());
         }
         finally
         {
@@ -176,7 +176,7 @@ public class FastDbHelper<T> {
         }
         catch (SQLException e)
         {
-            LogUtils.e("queryForAll",e.toString());
+            LogUtils.e("queryForAll"+e.toString());
         }
         finally
         {

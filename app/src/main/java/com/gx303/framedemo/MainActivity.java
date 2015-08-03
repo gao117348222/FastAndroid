@@ -21,12 +21,15 @@ import com.gx303.framedemo.listviewdemo.LvActivity;
 import com.gx303.framedemo.orm.User;
 import com.gx303.framedemo.orm.dbhelp1;
 import com.gx303.framedemo.pulllistview.LoadMoreActivity;
+import com.gx303.framedemo.recyelcviewdemo.testRecycleView;
 
 import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static com.gx303.fastandroid.utils.LogUtils.e;
 
 
 public class MainActivity extends com.gx303.fastandroid.BaseActivity {
@@ -204,6 +207,12 @@ public class MainActivity extends com.gx303.fastandroid.BaseActivity {
     {
         Intent it1=new Intent();
         it1.setClass(getApplicationContext(), DialogDemo.class);
+        startActivity(it1);
+    }
+    public void testrecyclerview(View v)
+    {
+        Intent it1=new Intent();
+        it1.setClass(getApplicationContext(),testRecycleView.class);
         startActivity(it1);
     }
 }
