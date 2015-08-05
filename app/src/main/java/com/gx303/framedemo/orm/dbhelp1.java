@@ -13,7 +13,6 @@ public class dbhelp1 extends FastDatabaseHelper{
     public dbhelp1(Context context)
     {
         super(context,DataBaseName,DATABASE_VERSION);
-
     }
 
     @Override

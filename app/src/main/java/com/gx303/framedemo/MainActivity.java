@@ -15,13 +15,17 @@ import com.gx303.fastandroid.db.FastDatabaseHelper;
 import com.gx303.fastandroid.db.FastDbHelper;
 import com.gx303.fastandroid.http.FastHttp;
 import com.gx303.fastandroid.http.FastHttpCallback;
+import com.gx303.framedemo.cardview.cardviewtest;
+import com.gx303.framedemo.cardview.recycler_fresh;
 import com.gx303.framedemo.dialog.DialogDemo;
 import com.gx303.framedemo.image.ImageActivity;
 import com.gx303.framedemo.listviewdemo.LvActivity;
 import com.gx303.framedemo.orm.User;
 import com.gx303.framedemo.orm.dbhelp1;
+import com.gx303.framedemo.orm.ormtest;
 import com.gx303.framedemo.pulllistview.LoadMoreActivity;
 import com.gx303.framedemo.recyelcviewdemo.testRecycleView;
+import com.gx303.framedemo.view.viewtest;
 
 import org.json.JSONObject;
 
@@ -213,6 +217,30 @@ public class MainActivity extends com.gx303.fastandroid.BaseActivity {
     {
         Intent it1=new Intent();
         it1.setClass(getApplicationContext(),testRecycleView.class);
+        startActivity(it1);
+    }
+    public void testsql(View v)
+    {
+        Intent it1=new Intent();
+        it1.setClass(getApplicationContext(),ormtest.class);
+        startActivity(it1);
+    }
+    public void testcardview(View v)
+    {
+        Intent it1=new Intent();
+        it1.setClass(getApplicationContext(),cardviewtest.class);
+        startActivity(it1);
+    }
+    public void testview(View v)
+    {
+        Intent it1=new Intent();
+        it1.setClass(getApplicationContext(),viewtest.class);
+        startActivity(it1);
+    }
+    public void testrecycler(View v)
+    {
+        Intent it1=new Intent();
+        it1.setClass(getApplicationContext(),recycler_fresh.class);
         startActivity(it1);
     }
 }

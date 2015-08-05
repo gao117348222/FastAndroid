@@ -24,6 +24,10 @@
         <activity android:name=".image.ImageActivity"></activity>
         <activity android:name=".dialog.DialogDemo"></activity>
         <activity android:name=".recyelcviewdemo.testRecycleView"></activity>
+        <activity android:name=".orm.ormtest"></activity>
+        <activity android:name=".cardview.cardviewtest"></activity>
+        <activity android:name=".view.viewtest"></activity>
+        <activity android:name=".cardview.recycler_fresh"></activity>
     </application>
 
 </manifest>

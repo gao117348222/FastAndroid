@@ -61,23 +61,9 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="insert sql"
-                android:id="@+id/button10"
-                android:onClick="insertsql" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="SELECT SQL"
-                android:id="@+id/button11"
-                android:onClick="selectSql" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="UPDATE SQL"
+                android:text="测试sql"
                 android:id="@+id/button12"
-                android:onClick="updatesql" />
+                android:onClick="testsql" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -106,6 +92,27 @@
                 android:text="测试recyclerview"
                 android:id="@+id/button19"
                 android:onClick="testrecyclerview" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="测试cardview"
+                android:id="@+id/button10"
+                android:onClick="testcardview" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="测试特殊的view"
+                android:id="@+id/button25"
+                android:onClick="testview" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="下拉上拉的recycler"
+                android:id="@+id/button26"
+                android:onClick="testrecycler" />
         </LinearLayout>
     </ScrollView>
 

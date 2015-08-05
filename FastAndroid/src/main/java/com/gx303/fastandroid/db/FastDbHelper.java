@@ -8,6 +8,7 @@ import java.util.Map;
 import android.annotation.TargetApi;
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Build;
 
 import com.gx303.fastandroid.utils.LogUtils;
@@ -35,8 +36,8 @@ public class FastDbHelper<T> {
         }
         finally
         {
-            if (db != null)
-                db.close();
+//            if (db != null)
+//                db.close();
         }
         return -1;
     }
@@ -55,8 +56,8 @@ public class FastDbHelper<T> {
         }
         finally
         {
-            if (db != null)
-                db.close();
+//            if (db != null)
+//                db.close();
         }
         return false;
     }
@@ -75,8 +76,8 @@ public class FastDbHelper<T> {
         }
         finally
         {
-            if (db != null)
-                db.close();
+//            if (db != null)
+//                db.close();
         }
         return -1;
     }
@@ -94,8 +95,8 @@ public class FastDbHelper<T> {
         }
         finally
         {
-            if (db != null)
-                db.close();
+//            if (db != null)
+//                db.close();
         }
         return new ArrayList<T>();
     }
@@ -112,8 +113,8 @@ public class FastDbHelper<T> {
         }
         finally
         {
-            if (db != null)
-                db.close();
+//            if (db != null)
+//                db.close();
         }
         return -1;
     }
@@ -144,8 +145,8 @@ public class FastDbHelper<T> {
         }
         finally
         {
-            if (db != null)
-                db.close();
+//            if (db != null)
+//                db.close();
         }
         return -1;
     }
@@ -162,8 +163,8 @@ public class FastDbHelper<T> {
         }
         finally
         {
-            if (db != null)
-                db.close();
+//            if (db != null)
+//                db.close();
         }
         return -1;
     }
@@ -180,8 +181,8 @@ public class FastDbHelper<T> {
         }
         finally
         {
-            if (db != null)
-                db.close();
+//            if (db != null)
+//                db.close();
         }
         return new ArrayList<T>();
     }
