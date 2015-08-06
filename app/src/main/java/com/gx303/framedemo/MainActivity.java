@@ -1,19 +1,14 @@
 package com.gx303.framedemo;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.ArrayMap;
-import android.util.Log;
 import android.view.View;
 
 
-import com.gx303.fastandroid.db.FastDatabaseHelper;
 import com.gx303.fastandroid.db.FastDbHelper;
-import com.gx303.fastandroid.http.FastHttp;
 import com.gx303.fastandroid.http.FastHttpCallback;
 import com.gx303.framedemo.cardview.cardviewtest;
 import com.gx303.framedemo.cardview.recycler_fresh;
@@ -27,13 +22,11 @@ import com.gx303.framedemo.pulllistview.LoadMoreActivity;
 import com.gx303.framedemo.recyelcviewdemo.testRecycleView;
 import com.gx303.framedemo.view.viewtest;
 
-import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.gx303.fastandroid.utils.LogUtils.e;
+import static com.gx303.fastandroid.utils.FastLogUtils.e;
 
 
 public class MainActivity extends com.gx303.fastandroid.BaseActivity {

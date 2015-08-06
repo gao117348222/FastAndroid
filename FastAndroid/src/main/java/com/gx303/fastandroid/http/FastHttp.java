@@ -1,17 +1,12 @@
 package com.gx303.fastandroid.http;
 
-import android.util.Log;
 
-
-import com.gx303.fastandroid.utils.LogUtils;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
-
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.Map;

@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.gx303.fastandroid.utils.LogUtils;
-
 /**
  * Created by Administrator on 2015/7/2.
  */

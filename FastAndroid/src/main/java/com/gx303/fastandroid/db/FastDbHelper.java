@@ -7,11 +7,9 @@ import java.util.Map;
 
 import android.annotation.TargetApi;
 import android.content.ContentValues;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Build;
 
-import com.gx303.fastandroid.utils.LogUtils;
+import com.gx303.fastandroid.utils.FastLogUtils;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.UpdateBuilder;
 /**
@@ -32,7 +30,7 @@ public class FastDbHelper<T> {
         }
         catch (SQLException e)
         {
-            LogUtils.e("create"+e.toString());
+            FastLogUtils.e("create" + e.toString());
         }
         finally
         {
@@ -52,7 +50,7 @@ public class FastDbHelper<T> {
         }
         catch (SQLException e)
         {
-            LogUtils.e("exists"+e.toString());
+            FastLogUtils.e("exists" + e.toString());
         }
         finally
         {
@@ -72,7 +70,7 @@ public class FastDbHelper<T> {
         }
         catch (SQLException e)
         {
-            LogUtils.e("createIfNotExists"+e.toString());
+            FastLogUtils.e("createIfNotExists" + e.toString());
         }
         finally
         {
@@ -91,7 +89,7 @@ public class FastDbHelper<T> {
         }
         catch (SQLException e)
         {
-            LogUtils.e("queryForEq"+e.toString());
+            FastLogUtils.e("queryForEq" + e.toString());
         }
         finally
         {
@@ -109,7 +107,7 @@ public class FastDbHelper<T> {
         }
         catch (SQLException e)
         {
-            LogUtils.e("remove"+e.toString());
+            FastLogUtils.e("remove" + e.toString());
         }
         finally
         {
@@ -141,7 +139,7 @@ public class FastDbHelper<T> {
         }
         catch (SQLException e)
         {
-            LogUtils.e("update"+e.toString());
+            FastLogUtils.e("update" + e.toString());
         }
         finally
         {
@@ -159,7 +157,7 @@ public class FastDbHelper<T> {
         }
         catch (SQLException e)
         {
-            LogUtils.e("update"+e.toString());
+            FastLogUtils.e("update" + e.toString());
         }
         finally
         {
@@ -177,7 +175,7 @@ public class FastDbHelper<T> {
         }
         catch (SQLException e)
         {
-            LogUtils.e("queryForAll"+e.toString());
+            FastLogUtils.e("queryForAll" + e.toString());
         }
         finally
         {

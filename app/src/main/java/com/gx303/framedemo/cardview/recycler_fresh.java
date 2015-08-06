@@ -13,7 +13,7 @@ import com.gx303.framedemo.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.gx303.fastandroid.utils.LogUtils.e;
+import static com.gx303.fastandroid.utils.FastLogUtils.e;
 
 /**
  * Created by Administrator on 2015/8/5.

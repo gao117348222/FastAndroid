@@ -2,8 +2,6 @@ package com.gx303.fastandroid;
 
 import android.os.Bundle;
 
-import com.gx303.fastandroid.utils.LogUtils;
-
 /**
  * Created by Administrator on 2015/7/2.
  */

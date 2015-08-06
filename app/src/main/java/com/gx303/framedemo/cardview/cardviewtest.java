@@ -4,7 +4,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -12,12 +11,11 @@ import android.widget.TextView;
 
 import com.gx303.fastandroid.adapter.RecyclerViewViewHolder;
 import com.gx303.framedemo.R;
-import com.gx303.framedemo.recyelcviewdemo.adapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.gx303.fastandroid.utils.LogUtils.e;
+import static com.gx303.fastandroid.utils.FastLogUtils.e;
 
 /**
  * Created by Administrator on 2015/8/4.
