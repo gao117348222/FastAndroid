@@ -1,10 +1,12 @@
 #FastAndroid
 ------
 这只是一个集合了各大吊炸天开源类库的项目和demo
+
 This is only a project which collect many open source class and a demo
 
 ------
 让我们看一下到底有那些吊炸天的类库
+
 Let's see how cool these class are
 
 ------
@@ -19,10 +21,12 @@ Let's see how cool these class are
 
 ----------
 下面来分析一下fastandroid的好用类库
+
 Let's analyze good class in fast android 
 
 #BaseActivity
 这是一个好用的baseActivity，用法
+
 This is a good base class,USE
 
     MainActivity extends com.gx303.fastandroid.BaseActivity
@@ -47,10 +51,12 @@ This is a good base class,USE
     
 #BaseFragmentActivity
 和BaseActivity同理
+
 Same as BaseActivity
 
 #FastAdapter
 这是一个好用方便的BaseAdapter，可以用于Listview或者GridView
+
 This is a good use BaseAdapter,Can use for ListView or GridView
 
             FastAdapter adapter1=new FastAdapter<String>(getApplicationContext(),datas,R.layout.xxx) {
@@ -65,6 +71,7 @@ This is a good use BaseAdapter,Can use for ListView or GridView
 
 #FastDialog
 这是一个好用方便的dialog类
+
 This is a good use dialog class
 
           Dialog  da1=new FastDialog(DialogDemo.this,R.style.Trans_Fullscreen,R.layout.xxx){
@@ -82,6 +89,7 @@ This is a good use dialog class
 
 #FastRecyclerViewAdapter
 这是一个好用方便的RecyclerView.Adapter
+
 This is a good use RecyclerView.Adapter
 
             com.gx303.fastandroid.adapter.FastRecyclerViewAdapter<String> adapter1=new com.gx303.fastandroid.adapter.FastRecyclerViewAdapter<String>(getApplicationContext(),datas,R.layout.xxxxxx){
@@ -97,7 +105,9 @@ This is a good use RecyclerView.Adapter
 
 #FastDatabaseHelper
 这是一个好用方便的数据库类
+
 This a good use sqlbase class
+
 User类的写法参照[OrmLite官方][4]
 User Class writing way [OrmLite官方][4]
 
@@ -115,6 +125,7 @@ User Class writing way [OrmLite官方][4]
      }
 #FastDbHelper
 这个类可以和FastDatabaseHelper配合最佳，就如巧克力和下雨天最配
+
 This Class can match FastDatabaseHelper good ,just as eat chocolate in rainy day
 
      FastDbHelper fh=new FastDbHelper(new dbhelp1(getApplicationContext()));
@@ -149,6 +160,7 @@ Good log manager
         
 #DropDownListView
 可下拉刷新和上拉自动加载的ListView 
+
 Can pull to refresh and pull up auto load listview 
 
     private DropDownListView listView;
@@ -172,6 +184,7 @@ Can pull to refresh and pull up auto load listview
 
 #PullToLoadView
 可下拉刷新和上拉自动加载的RecyclerView
+
 Can pull to refresh and pull up auto load RecyclerView
 
     com.gx303.fastandroid.view.RecyclerView.PullToLoadView rv1;
