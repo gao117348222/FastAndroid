@@ -3,6 +3,7 @@ package com.gx303.framedemo.listviewdemo;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.SparseArray;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -25,6 +26,12 @@ public class LvActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listviewtest);
         lv1=(ListView)findViewById(R.id.listView);
+
+
+//        SparseArray<String> aa =new SparseArray<>();
+//        aa.append(1,"111");
+//
+
 
 
         List<String> mDatas=new ArrayList<>();
@@ -56,6 +63,19 @@ public class LvActivity extends Activity {
             }
         };
         lv1.setAdapter(adapter1);
+
+    }
+    public boolean containKey(SparseArray sparseArray,int key)
+    {
+        Object value=sparseArray.get(key,123456);
+        if(value==123456)
+        {
+            return false;
+        }
+        else
+        {
+            return  true;
+        }
 
     }
 }

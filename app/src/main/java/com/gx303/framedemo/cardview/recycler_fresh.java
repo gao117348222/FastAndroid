@@ -7,7 +7,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.widget.TextView;
 
 import com.gx303.fastandroid.adapter.RecyclerViewViewHolder;
-import com.gx303.fastandroid.view.RecyclerView.PullCallback;
+//import com.gx303.fastandroid.view.RecyclerView.PullCallback;
+import com.gx303.fastandroid.view.recyclerview.PullLoadMoreRecyclerView;
 import com.gx303.framedemo.R;
 
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ import static com.gx303.fastandroid.utils.FastLogUtils.e;
  * Created by Administrator on 2015/8/5.
  */
 public class recycler_fresh extends com.gx303.fastandroid.BaseActivity {
-    com.gx303.fastandroid.view.RecyclerView.PullToLoadView rv1;
+    com.gx303.fastandroid.view.recyclerview.PullLoadMoreRecyclerView rv1;
     List<String> datas1;
     @Override
     public void setContentView() {
@@ -28,11 +29,21 @@ public class recycler_fresh extends com.gx303.fastandroid.BaseActivity {
 
     @Override
     public void findViews() {
-        rv1=(com.gx303.fastandroid.view.RecyclerView.PullToLoadView)findViewById(R.id.pulltoloadview);
-        rv1.getRecyclerView().setLayoutManager(new LinearLayoutManager(this));
-        rv1.getRecyclerView().setItemAnimator(new DefaultItemAnimator());
-        rv1.getRecyclerView().setHasFixedSize(true);
+        rv1=(com.gx303.fastandroid.view.recyclerview.PullLoadMoreRecyclerView)findViewById(R.id.pulltoloadview);
+//        rv1.setRefreshing(true);
+//        new DataAsyncTask().execute();
+        rv1.setLinearLayout();
+        rv1.setPullLoadMoreListener(new PullLoadMoreRecyclerView.PullLoadMoreListener(){
+            @Override
+            public void onRefresh() {
+                handler.sendEmptyMessageDelayed(1,2000);
+            }
 
+            @Override
+            public void onLoadMore() {
+                handler.sendEmptyMessageDelayed(2,2000);
+            }
+        });
     }
 
     @Override
@@ -47,47 +58,38 @@ public class recycler_fresh extends com.gx303.fastandroid.BaseActivity {
         datas1.add("测试7\n测试7\n测试7");
         datas1.add("测试8\r测试8\r测试8");
     }
-
+    com.gx303.fastandroid.adapter.FastRecyclerViewAdapter<String> adapter1;
     @Override
     public void showContent() {
-        com.gx303.fastandroid.adapter.FastRecyclerViewAdapter<String> adapter1=new com.gx303.fastandroid.adapter.FastRecyclerViewAdapter<String>(getApplicationContext(),datas1,R.layout.cardview_item){
+        adapter1=new com.gx303.fastandroid.adapter.FastRecyclerViewAdapter<String>(getApplicationContext(),datas1,R.layout.cardview_item){
             @Override
             public void convert(RecyclerViewViewHolder helper, String item) {
                 TextView tv1=helper.getView(R.id.text_view);
                 tv1.setText(item);
             }
         };
-        rv1.getRecyclerView().setAdapter(adapter1);
-        rv1.isLoadMoreEnabled(true);
-        rv1.setPullCallback(new PullCallback() {
-            @Override
-            public void onLoadMore() {
-                e("onLoadMore");
-                handler.sendEmptyMessageDelayed(1, 2000);
-            }
-
-            @Override
-            public void onRefresh() {
-                e("onRefresh");
-                handler.sendEmptyMessageDelayed(1, 2000);
-            }
-
-            @Override
-            public boolean isLoading() {
-                return false;
-            }
-
-            @Override
-            public boolean hasLoadedAllItems() {
-                return false;
-            }
-        });
+        rv1.setAdapter(adapter1);
     }
+    int i=0;
+    int j=0;
     Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            rv1.setComplete();
+            switch(msg.what)
+            {
+                case 1:
+                    datas1.add(0, "刷新出来的" + i++);
+//                    adapter1.notifyItemInserted(0);
+                    adapter1.notifyDataSetChanged();
+                    break;
+                case 2:
+                    datas1.add(datas1.size(),"load出来的"+j++);
+//                    adapter1.notifyItemInserted(datas1.size());
+                    adapter1.notifyDataSetChanged();
+                    break;
+            }
+            rv1.setPullLoadMoreCompleted();
         }
     };
 }

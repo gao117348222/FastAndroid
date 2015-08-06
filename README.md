@@ -1,31 +1,31 @@
 #FastAndroid
 ------
-ÕâÖ»ÊÇÒ»¸ö¼¯ºÏÁË¸÷´óµõÕ¨Ìì¿ªÔ´Àà¿âµÄÏîÄ¿ºÍdemo
+è¿™åªæ˜¯ä¸€ä¸ªé›†åˆäº†å„å¤§åŠç‚¸å¤©å¼€æºç±»åº“çš„é¡¹ç›®å’Œdemo
 
 This is only a project which collect many open source class and a demo
 
 ------
-ÈÃÎÒÃÇ¿´Ò»ÏÂµ½µ×ÓĞÄÇĞ©µõÕ¨ÌìµÄÀà¿â
+è®©æˆ‘ä»¬çœ‹ä¸€ä¸‹åˆ°åº•æœ‰é‚£äº›åŠç‚¸å¤©çš„ç±»åº“
 
 Let's see how cool these class are
 
 ------
->* com.android.support:support-v4:22.1.1      Äã¶®µÄ
->* com.android.support:appcompat-v7:22.1.1    Äã¶®µÄ
->* com.j256.ormlite:ormlite-android:4.48      [Êı¾İ¿â²Ù×÷µÄ][1]
->* com.squareup.okhttp:okhttp:2.4.0           [ÍøÂçµÄ][2]
->* com.github.bumptech.glide:glide:3.6.1      [Í¼Æ¬¼ÓÔØµÄ][3]
->* com.android.support:recyclerview-v7:22.1.1 Äã¶®µÄ
->* com.android.support:cardview-v7:22.1.1     Äã¶®µÄ
+>* com.android.support:support-v4:22.1.1      ä½ æ‡‚çš„
+>* com.android.support:appcompat-v7:22.1.1    ä½ æ‡‚çš„
+>* com.j256.ormlite:ormlite-android:4.48      [æ•°æ®åº“æ“ä½œçš„][1]
+>* com.squareup.okhttp:okhttp:2.4.0           [ç½‘ç»œçš„][2]
+>* com.github.bumptech.glide:glide:3.6.1      [å›¾ç‰‡åŠ è½½çš„][3]
+>* com.android.support:recyclerview-v7:22.1.1 ä½ æ‡‚çš„
+>* com.android.support:cardview-v7:22.1.1     ä½ æ‡‚çš„
 
 
 ----------
-ÏÂÃæÀ´·ÖÎöÒ»ÏÂfastandroidµÄºÃÓÃÀà¿â
+ä¸‹é¢æ¥åˆ†æä¸€ä¸‹fastandroidçš„å¥½ç”¨ç±»åº“
 
 Let's analyze good class in fast android 
 
 #BaseActivity
-ÕâÊÇÒ»¸öºÃÓÃµÄbaseActivity£¬ÓÃ·¨
+è¿™æ˜¯ä¸€ä¸ªå¥½ç”¨çš„baseActivityï¼Œç”¨æ³•
 
 This is a good base class,USE
 
@@ -50,12 +50,12 @@ This is a good base class,USE
 
     
 #BaseFragmentActivity
-ºÍBaseActivityÍ¬Àí
+å’ŒBaseActivityåŒç†
 
 Same as BaseActivity
 
 #FastAdapter
-ÕâÊÇÒ»¸öºÃÓÃ·½±ãµÄBaseAdapter£¬¿ÉÒÔÓÃÓÚListview»òÕßGridView
+è¿™æ˜¯ä¸€ä¸ªå¥½ç”¨æ–¹ä¾¿çš„BaseAdapterï¼Œå¯ä»¥ç”¨äºListviewæˆ–è€…GridView
 
 This is a good use BaseAdapter,Can use for ListView or GridView
 
@@ -70,7 +70,7 @@ This is a good use BaseAdapter,Can use for ListView or GridView
         lv1.setAdapter(adapter1);
 
 #FastDialog
-ÕâÊÇÒ»¸öºÃÓÃ·½±ãµÄdialogÀà
+è¿™æ˜¯ä¸€ä¸ªå¥½ç”¨æ–¹ä¾¿çš„dialogç±»
 
 This is a good use dialog class
 
@@ -88,7 +88,7 @@ This is a good use dialog class
         }.getDialog();
 
 #FastRecyclerViewAdapter
-ÕâÊÇÒ»¸öºÃÓÃ·½±ãµÄRecyclerView.Adapter
+è¿™æ˜¯ä¸€ä¸ªå¥½ç”¨æ–¹ä¾¿çš„RecyclerView.Adapter
 
 This is a good use RecyclerView.Adapter
 
@@ -104,12 +104,12 @@ This is a good use RecyclerView.Adapter
         rv1.setAdapter(adapter1);
 
 #FastDatabaseHelper
-ÕâÊÇÒ»¸öºÃÓÃ·½±ãµÄÊı¾İ¿âÀà
+è¿™æ˜¯ä¸€ä¸ªå¥½ç”¨æ–¹ä¾¿çš„æ•°æ®åº“ç±»
 
 This a good use sqlbase class
 
-UserÀàµÄĞ´·¨²ÎÕÕ[OrmLite¹Ù·½][4]
-User Class writing way [OrmLite¹Ù·½][4]
+Userç±»çš„å†™æ³•å‚ç…§[OrmLiteå®˜æ–¹][4]
+User Class writing way [OrmLiteå®˜æ–¹][4]
 
      public class dbhelp1 extends FastDatabaseHelper{
          static  String DataBaseName="db1.db";
@@ -124,14 +124,14 @@ User Class writing way [OrmLite¹Ù·½][4]
          }
      }
 #FastDbHelper
-Õâ¸öÀà¿ÉÒÔºÍFastDatabaseHelperÅäºÏ×î¼Ñ£¬¾ÍÈçÇÉ¿ËÁ¦ºÍÏÂÓêÌì×îÅä
+è¿™ä¸ªç±»å¯ä»¥å’ŒFastDatabaseHelperé…åˆæœ€ä½³ï¼Œå°±å¦‚å·§å…‹åŠ›å’Œä¸‹é›¨å¤©æœ€é…
 
 This Class can match FastDatabaseHelper good ,just as eat chocolate in rainy day
 
      FastDbHelper fh=new FastDbHelper(new dbhelp1(getApplicationContext()));
      fh.create(new User("hehe123123"));
 #FastHttp
-Õâ¸öÀàÊÇÍøÂçÇëÇóµÄ
+è¿™ä¸ªç±»æ˜¯ç½‘ç»œè¯·æ±‚çš„
 This class can use for http post or get
 
         Map<String,String > map1=new HashMap<String,String>();
@@ -139,11 +139,11 @@ This class can use for http post or get
         map1.put("key2","value2");
         map1.put("key3","value3");
         map1.put("key4","value4");
-        map1.put("key4", "²âÊÔÖĞÎÄ");
+        map1.put("key4", "æµ‹è¯•ä¸­æ–‡");
         com.gx303.fastandroid.http.FastHttp.POST("http://weixingtest1.sinaapp.com/testpost.php", map1, new FastHttpCallback() {
             @Override
             public void onResponse(String result) {
-                e("²âÊÔPOST½áÊø" + result);
+                e("æµ‹è¯•POSTç»“æŸ" + result);
             }
 
             @Override
@@ -153,13 +153,13 @@ This class can use for http post or get
         });
         
 #FastLogUtils
-·½±ãµÄlog¹ÜÀí
+æ–¹ä¾¿çš„logç®¡ç†
 Good log manager
 
      e("easy as pie");
         
 #DropDownListView
-¿ÉÏÂÀ­Ë¢ĞÂºÍÉÏÀ­×Ô¶¯¼ÓÔØµÄListView 
+å¯ä¸‹æ‹‰åˆ·æ–°å’Œä¸Šæ‹‰è‡ªåŠ¨åŠ è½½çš„ListView 
 
 Can pull to refresh and pull up auto load listview 
 
@@ -182,46 +182,31 @@ Can pull to refresh and pull up auto load listview
             }
         });
 
-#PullToLoadView
-¿ÉÏÂÀ­Ë¢ĞÂºÍÉÏÀ­×Ô¶¯¼ÓÔØµÄRecyclerView
+#PullLoadMoreRecyclerView
+å¯ä¸‹æ‹‰åˆ·æ–°å’Œä¸Šæ‹‰è‡ªåŠ¨åŠ è½½çš„RecyclerView
 
 Can pull to refresh and pull up auto load RecyclerView
 
-    com.gx303.fastandroid.view.RecyclerView.PullToLoadView rv1;
-    rv1=(com.gx303.fastandroid.view.RecyclerView.PullToLoadView)findViewById(R.id.pulltoloadview);
-    rv1.getRecyclerView().setLayoutManager(new LinearLayoutManager(this));
-    rv1.getRecyclerView().setItemAnimator(new DefaultItemAnimator());
-    rv1.getRecyclerView().setHasFixedSize(true);
-    rv1.isLoadMoreEnabled(true);
-        rv1.setPullCallback(new PullCallback() {
-            @Override
-            public void onLoadMore() {
-                e("onLoadMore");
-                handler.sendEmptyMessageDelayed(1, 2000);
-            }
+    com.gx303.fastandroid.view.recyclerview.PullLoadMoreRecyclerView rv1;
+    rv1=(com.gx303.fastandroid.view.recyclerview.PullLoadMoreRecyclerView)findViewById(R.id.pulltoloadview);
+    rv1.setLinearLayout();
+           rv1.setPullLoadMoreListener(new PullLoadMoreRecyclerView.PullLoadMoreListener(){
+               @Override
+               public void onRefresh() {
+                   handler.sendEmptyMessageDelayed(1,2000);
+               }
 
-            @Override
-            public void onRefresh() {
-                e("onRefresh");
-                handler.sendEmptyMessageDelayed(1, 2000);
-            }
-
-            @Override
-            public boolean isLoading() {
-                return false;
-            }
-
-            @Override
-            public boolean hasLoadedAllItems() {
-                return false;
-            }
-        });
+               @Override
+               public void onLoadMore() {
+                   handler.sendEmptyMessageDelayed(2,2000);
+               }
+           });
         
         Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
                 super.handleMessage(msg);
-                rv1.setComplete();
+                rv1.setPullLoadMoreCompleted();
             }
         };
 
