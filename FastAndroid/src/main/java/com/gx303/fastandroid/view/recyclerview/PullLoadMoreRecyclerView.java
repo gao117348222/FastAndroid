@@ -1,4 +1,4 @@
-package com.gx303.fastandroid.view.recyclerview1;
+package com.gx303.fastandroid.view.recyclerview;
 
 /**
  * Created by Administrator on 2015/8/6.
