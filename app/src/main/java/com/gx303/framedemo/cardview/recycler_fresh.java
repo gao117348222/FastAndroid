@@ -2,25 +2,21 @@ package com.gx303.framedemo.cardview;
 
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
 import android.widget.TextView;
 
 import com.gx303.fastandroid.adapter.RecyclerViewViewHolder;
 //import com.gx303.fastandroid.view.RecyclerView.PullCallback;
-import com.gx303.fastandroid.view.recyclerview.PullLoadMoreRecyclerView;
+import com.gx303.fastandroid.view.recyclerview1.PullLoadMoreRecyclerView;
 import com.gx303.framedemo.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.gx303.fastandroid.utils.FastLogUtils.e;
-
 /**
  * Created by Administrator on 2015/8/5.
  */
 public class recycler_fresh extends com.gx303.fastandroid.BaseActivity {
-    com.gx303.fastandroid.view.recyclerview.PullLoadMoreRecyclerView rv1;
+    com.gx303.fastandroid.view.recyclerview1.PullLoadMoreRecyclerView rv1;
     List<String> datas1;
     @Override
     public void setContentView() {
@@ -29,7 +25,7 @@ public class recycler_fresh extends com.gx303.fastandroid.BaseActivity {
 
     @Override
     public void findViews() {
-        rv1=(com.gx303.fastandroid.view.recyclerview.PullLoadMoreRecyclerView)findViewById(R.id.pulltoloadview);
+        rv1=(com.gx303.fastandroid.view.recyclerview1.PullLoadMoreRecyclerView)findViewById(R.id.pulltoloadview);
 //        rv1.setRefreshing(true);
 //        new DataAsyncTask().execute();
         rv1.setLinearLayout();
