@@ -211,9 +211,9 @@ Can pull to refresh and pull up auto load RecyclerView
         };
 
 #FastLoopViewPagerWithIncicator
-可以无限循环的Viewpager,只需传入图片的链接
+可以无限循环的Viewpager,只需传入图片的链接(图片个数需要大于等于3)
 
-A viewpager who can infinite loop and you only need input link of images
+A viewpager who can infinite loop and you only need input link of images(images num must biger than 3)
 
     com.gx303.fastandroid.view.viewpager.FastLoopViewPagerWithIncicator fastLoopViewPagerWithIncicator;
 

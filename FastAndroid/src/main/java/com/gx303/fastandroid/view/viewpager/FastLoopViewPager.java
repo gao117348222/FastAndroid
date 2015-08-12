@@ -63,7 +63,7 @@ public class FastLoopViewPager extends ViewPager {
     }
     public int getCurrentItem1()
     {
-        e("aa"+super.getCurrentItem()+" "+getCount()+" "+super.getCurrentItem()%getCount());
+//        e("aa"+super.getCurrentItem()+" "+getCount()+" "+super.getCurrentItem()%getCount());
         return super.getCurrentItem()%getCount();
     }
 
