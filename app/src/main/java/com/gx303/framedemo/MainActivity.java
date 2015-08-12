@@ -21,6 +21,7 @@ import com.gx303.framedemo.orm.ormtest;
 import com.gx303.framedemo.pulllistview.LoadMoreActivity;
 import com.gx303.framedemo.recyelcviewdemo.testRecycleView;
 import com.gx303.framedemo.view.viewtest;
+import com.gx303.framedemo.viewpager.viewpagertest;
 
 import java.util.HashMap;
 import java.util.List;
@@ -234,6 +235,12 @@ public class MainActivity extends com.gx303.fastandroid.BaseActivity {
     {
         Intent it1=new Intent();
         it1.setClass(getApplicationContext(),recycler_fresh.class);
+        startActivity(it1);
+    }
+    public void testviewpager(View v)
+    {
+        Intent it1=new Intent();
+        it1.setClass(getApplicationContext(),viewpagertest.class);
         startActivity(it1);
     }
 }

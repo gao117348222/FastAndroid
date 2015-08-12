@@ -210,7 +210,24 @@ Can pull to refresh and pull up auto load RecyclerView
             }
         };
 
+#FastLoopViewPagerWithIncicator
+可以无限循环的Viewpager,只需传入图片的链接
 
+A viewpager who can infinite loop and you only need input link of images
+
+    com.gx303.fastandroid.view.viewpager.FastLoopViewPagerWithIncicator fastLoopViewPagerWithIncicator;
+
+    fastLoopViewPagerWithIncicator.setImages(imagesurl, new onClickViewPagerItemListsner() {
+        @Override
+        public void onclick(int index) {
+            Toast.makeText(viewpagertest.this, "onclick"+index, Toast.LENGTH_SHORT).show();
+        }
+    });
+
+    //autoloop
+    fastLoopViewPagerWithIncicator.startAutoLoop(0,2000);
+    //endloop
+    fastLoopViewPagerWithIncicator.endAutoLoop();
 
 
   [1]: https://github.com/j256/ormlite-android

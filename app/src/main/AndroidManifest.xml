@@ -28,6 +28,7 @@
         <activity android:name=".cardview.cardviewtest"></activity>
         <activity android:name=".view.viewtest"></activity>
         <activity android:name=".cardview.recycler_fresh"></activity>
+        <activity android:name=".viewpager.viewpagertest"></activity>
     </application>
 
 </manifest>

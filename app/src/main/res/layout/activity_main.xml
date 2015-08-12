@@ -113,6 +113,13 @@
                 android:text="下拉上拉的recycler"
                 android:id="@+id/button26"
                 android:onClick="testrecycler" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ViewPager"
+                android:id="@+id/button27"
+                android:onClick="testviewpager" />
         </LinearLayout>
     </ScrollView>
 
