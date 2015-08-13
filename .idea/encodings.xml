@@ -6,6 +6,7 @@
     <file url="file://$PROJECT_DIR$/FastAndroid/src/main/java/com/gx303/fastandroid/view/viewpager/FastLoopViewPagerWithIncicator.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/FastAndroid/src/main/java/com/gx303/fastandroid/view/viewpager/PageIndicator.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/FastAndroid/src/main/java/com/gx303/fastandroid/view/viewpager/onClickViewPagerItemListsner.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/gx303/framedemo/orm/dbhelp1.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/gx303/framedemo/viewpager/viewpagertest.java" charset="UTF-8" />
   </component>
 </project>

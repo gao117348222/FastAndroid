@@ -229,6 +229,15 @@ A viewpager who can infinite loop and you only need input link of images(images 
     //endloop
     fastLoopViewPagerWithIncicator.endAutoLoop();
 
+#ClearEditText
+自带删除的Edittext
+
+A Edittext with clear button
+
+    <com.gx303.fastandroid.view.ClearEditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/view"/>
 
   [1]: https://github.com/j256/ormlite-android
   [2]: https://github.com/square/okhttp
