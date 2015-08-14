@@ -35,8 +35,6 @@ public class FastLoopViewPagerWithIncicator extends RelativeLayout {
         View view = LayoutInflater.from(context).inflate(R.layout.fastloopviewpager_withincicator_main, null);
         mViewPager=(com.gx303.fastandroid.view.viewpager.FastLoopViewPager)view.findViewById(R.id.viewpager);
         mPageIndicator=(com.gx303.fastandroid.view.viewpager.PageIndicator)view.findViewById(R.id.indicator);
-
-
         super.addView(view);
     }
     public void setImages(List<String> imageUrls,onClickViewPagerItemListsner listsner)

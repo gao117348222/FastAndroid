@@ -1,6 +1,7 @@
 package com.gx303.framedemo.orm;
 
 import android.view.View;
+import android.widget.TextView;
 
 import com.gx303.fastandroid.db.FastDbHelper;
 import com.gx303.framedemo.R;
@@ -53,7 +54,17 @@ public class ormtest extends com.gx303.fastandroid.BaseActivity {
         List<User> l1=fh.queryForAll(User.class);
         for(int i=0;i<l1.size();i++)
         {
-            e("user:"+l1.get(i).getName());
+            e("user:" + l1.get(i).getName());
         }
+    }
+    public void testtextview(View v)
+    {
+        TextView tv1=(TextView)findViewById(R.id.textView4);
+        tv1.setText("1");
+    }
+    public void testtextview1(View v)
+    {
+        TextView tv1=(TextView)findViewById(R.id.textView4);
+        tv1.setText("1123123ASDASD");
     }
 }

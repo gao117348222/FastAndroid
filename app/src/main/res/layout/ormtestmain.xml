@@ -23,4 +23,32 @@
         android:text="select"
         android:id="@+id/button21"
         android:onClick="selecttest" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/button30"
+        android:onClick="testtextview" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/button31"
+        android:onClick="testtextview1" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/textView4"
+            android:background="#000000"
+            android:textColor="#FFFFFF" />
+    </RelativeLayout>
 </LinearLayout>

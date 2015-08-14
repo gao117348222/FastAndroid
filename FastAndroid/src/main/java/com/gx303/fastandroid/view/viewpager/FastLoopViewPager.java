@@ -76,11 +76,17 @@ public class FastLoopViewPager extends ViewPager {
 
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
+            e("destroyItem"+position);
             container.removeView(mListViews.get(position % mListViews.size()));//删除页卡
         }
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {//这个方法用来实例化页卡
+            e("instantiateItem"+position);
+//            if(container.getParent().getParent()!=null)
+//            {
+//                container.removeView(mListViews.get(position % mListViews.size()));
+//            }
             container.addView(mListViews.get(position % mListViews.size()), 0);//添加页卡
             return mListViews.get(position%mListViews.size());
         }
