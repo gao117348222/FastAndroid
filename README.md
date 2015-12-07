@@ -17,7 +17,8 @@ Let's see how cool these class are
 >* com.github.bumptech.glide:glide:3.6.1      [图片加载的][3]
 >* com.android.support:recyclerview-v7:22.1.1 你懂的
 >* com.android.support:cardview-v7:22.1.1     你懂的
-
+>* io.reactivex:rxjava:1.1.0
+>* io.reactivex:rxandroid:1.0.1
 
 ----------
 下面来分析一下fastandroid的好用类库
@@ -151,6 +152,15 @@ This class can use for http post or get
 
             }
         });
+
+#FastHttpRx
+这个类是用rx的方法进行网络请求
+This class is use rx class to http post or get
+
+        com.gx303.fastandroid.http.FastHttpRx.GET(url)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(myObserver);
         
 #FastLogUtils
 方便的log管理
@@ -209,7 +219,7 @@ Can pull to refresh and pull up auto load RecyclerView
                 rv1.setPullLoadMoreCompleted();
             }
         };
-hao
+
 #FastLoopViewPagerWithIncicator
 可以无限循环的Viewpager,只需传入图片的链接(图片个数需要大于等于4)
 
@@ -239,6 +249,9 @@ A Edittext with clear button
         android:layout_height="wrap_content"
         android:id="@+id/view"/>
 
+#RxBus
+使用rx写的总线通知
+    http://nerds.weddingpartyapp.com/tech/2014/12/24/implementing-an-event-bus-with-rxjava-rxbus/
   [1]: https://github.com/j256/ormlite-android
   [2]: https://github.com/square/okhttp
   [3]: https://github.com/bumptech/glide

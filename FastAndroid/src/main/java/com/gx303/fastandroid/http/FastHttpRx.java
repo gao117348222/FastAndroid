@@ -30,7 +30,7 @@ public class FastHttpRx{
                 {
                     Response response = client.newCall(request).execute();
                     subscriber.onNext(response.body().string());
-//                    subscriber.onCompleted();
+                    subscriber.onCompleted();
                 }
                 catch (Exception e)
                 {
@@ -56,7 +56,7 @@ public class FastHttpRx{
                 {
                     Response response = client.newCall(request).execute();
                     subscriber.onNext(response.body().string());
-//                    subscriber.onCompleted();
+                    subscriber.onCompleted();
                 }
                 catch (Exception e)
                 {
