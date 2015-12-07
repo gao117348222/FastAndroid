@@ -120,6 +120,13 @@
                 android:text="ViewPager"
                 android:id="@+id/button27"
                 android:onClick="testviewpager" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RXAndroid"
+                android:id="@+id/button32"
+                android:onClick="rxandroidtest" />
         </LinearLayout>
     </ScrollView>
 

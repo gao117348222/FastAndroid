@@ -26,6 +26,11 @@ import com.gx303.framedemo.viewpager.viewpagertest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Observable;
+
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 import static com.gx303.fastandroid.utils.FastLogUtils.e;
 
@@ -243,4 +248,81 @@ public class MainActivity extends com.gx303.fastandroid.BaseActivity {
         it1.setClass(getApplicationContext(),viewpagertest.class);
         startActivity(it1);
     }
+    /*
+    测试rxandroid
+     */
+    public void rxandroidtest(View v)
+    {
+//        myObservable.observeOn(AndroidSchedulers.mainThread()).subscribe(mySubscriber);
+//        com.gx303.fastandroid.http.FastHttpRx.GET("http://cmbox.cmswat.com/cmbox/plugin/getPluginList.php")
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(new Subscriber<String>() {
+//                    @Override
+//                    public void onCompleted() {
+//
+//                    }
+//
+//                    @Override
+//                    public void onError(Throwable e) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onNext(String s) {
+//                        e("获取到网络数据"+s);
+//                    }
+//                });
+//        com.gx303.fastandroid.http.FastHttpRx.GET("http://cmbox.cmswat.com/cmbox/plugin/getPluginList.php")
+//                .subscribeOn(Schedulers.newThread())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(mySubscriber);
+
+        /*
+        测试post
+         */
+        Map<String,String > map1=new HashMap<String,String>();
+        map1.put("key1","value1");
+        map1.put("key2","value2");
+        map1.put("key3","value3");
+        map1.put("key4","value4");
+        map1.put("key4", "测试中文");
+        com.gx303.fastandroid.http.FastHttpRx.POST("http://weixingtest1.sinaapp.com/testpost.php",map1)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(mySubscriber);
+    }
+    rx.Observable<String> myObservable=rx.Observable.create(
+            new rx.Observable.OnSubscribe<String>() {
+                @Override
+                public void call(Subscriber<? super String> subscriber) {
+                    //获取数据
+                    String webdata="asjkdjaskdkjaskds";
+                    subscriber.onNext(webdata);
+                    subscriber.onCompleted();
+                }
+            }
+    );
+    Subscriber<String> mySubscriber=new Subscriber<String>() {
+        @Override
+        public void onStart() {
+            e("onStart");
+        }
+
+    @Override
+        public void onCompleted() {
+            e("onCompleted");
+        }
+
+        @Override
+        public void onError(Throwable e) {
+            e("onError"+e);
+        }
+
+        @Override
+        public void onNext(String s) {
+            e("获取到网络数据" + s);
+//            t(s);
+        }
+    };
+
 }
