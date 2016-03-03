@@ -13,7 +13,7 @@ Let's see how cool these class are
 >* com.android.support:support-v4:22.1.1      你懂的
 >* com.android.support:appcompat-v7:22.1.1    你懂的
 >* com.j256.ormlite:ormlite-android:4.48      [数据库操作的][1]
->* com.squareup.okhttp:okhttp:2.4.0           [网络的][2]
+>* com.squareup.okhttp:okhttp:3.2.0           [网络的][2]
 >* com.github.bumptech.glide:glide:3.6.1      [图片加载的][3]
 >* com.android.support:recyclerview-v7:22.1.1 你懂的
 >* com.android.support:cardview-v7:22.1.1     你懂的

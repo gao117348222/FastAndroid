@@ -5,19 +5,22 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.message.BasicNameValuePair;
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
 /**
  * 没啥用，查看OKHTTP方法用
  */
 public class OkHttpUtil {
 
     private static final OkHttpClient mOkHttpClient = new OkHttpClient();
-    static{
-        mOkHttpClient.setConnectTimeout(30, TimeUnit.SECONDS);
-    }
+//    static{
+//        mOkHttpClient.setConnectTimeout(30, TimeUnit.SECONDS);
+//    }
     /**
      * 该不会开启异步线程。
      * @param request
@@ -41,14 +44,13 @@ public class OkHttpUtil {
      */
     public static void enqueue(Request request){
         mOkHttpClient.newCall(request).enqueue(new Callback() {
-
             @Override
-            public void onResponse(Response arg0) throws IOException {
+            public void onFailure(Call call, IOException e) {
 
             }
 
             @Override
-            public void onFailure(Request arg0, IOException arg1) {
+            public void onResponse(Call call, Response response) throws IOException {
 
             }
         });

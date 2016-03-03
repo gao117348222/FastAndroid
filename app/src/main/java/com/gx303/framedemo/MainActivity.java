@@ -23,6 +23,8 @@ import com.gx303.framedemo.recyelcviewdemo.testRecycleView;
 import com.gx303.framedemo.view.viewtest;
 import com.gx303.framedemo.viewpager.viewpagertest;
 
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,7 +46,7 @@ public class MainActivity extends com.gx303.fastandroid.BaseActivity {
 
         e("aaaaaaaaaaaaaaaaaaaaa");
 
-        com.gx303.fastandroid.utils.PreferencesUtils.putString(getApplication(),"ceshi","测试");
+        com.gx303.fastandroid.utils.PreferencesUtils.putString(getApplication(), "ceshi", "测试");
     }
 
     @Override
@@ -166,17 +168,32 @@ public class MainActivity extends com.gx303.fastandroid.BaseActivity {
     public void webtest(View v)
     {
         e("访问网络开始");
-        com.gx303.fastandroid.http.FastHttp.GET("http://www.weather.com.cn/adat/sk/101110101.html", new FastHttpCallback() {
-            @Override
-            public void onResponse(String result) {
-                e("访问网络测试结果"+result);
-            }
+//        com.gx303.fastandroid.http.FastHttp.GET("http://www.weather.com.cn/adat/sk/101110101.html", new FastHttpCallback() {
+//            @Override
+//            public void onResponse(String result) {
+//                e("访问网络测试结果"+result);
+//            }
+//
+//            @Override
+//            public void onFailure(String error) {
+//
+//            }
+//        });
+//        Map<String,String> map1=new HashMap<>();
+//        map1.put("username","15860756273");
+//        map1.put("password","123456");
+//        com.gx303.fastandroid.http.FastHttp.POST("http://www.fyh0597.com/api/user/login", map1, new FastHttpCallback() {
+//            @Override
+//            public void onResponse(String result) {
+//                e("访问网络测试结果"+result);
+//            }
+//
+//            @Override
+//            public void onFailure(String error) {
+//                e("失败");
+//            }
+//        });
 
-            @Override
-            public void onFailure(String error) {
-
-            }
-        });
     }
     public void testpost(View v)
     {
@@ -189,7 +206,8 @@ public class MainActivity extends com.gx303.fastandroid.BaseActivity {
         map1.put("key4", "测试中文");
 
 
-        com.gx303.fastandroid.http.FastHttp.POST("http://weixingtest1.sinaapp.com/testpost.php", map1, new FastHttpCallback() {
+
+        com.gx303.fastandroid.http.FastHttp.POST("http://weixingtest1.sinaapp.com/testpost.php",map1, new FastHttpCallback() {
             @Override
             public void onResponse(String result) {
                 e("测试POST结束" + result);
